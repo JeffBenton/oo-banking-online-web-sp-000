@@ -16,11 +16,10 @@ class Transfer
     if @status == 'complete'
       return
     end
-    if !sender.valid?
+    if !sender.valid? &&
       @status = 'rejected'
       return "Transaction rejected. Please check your account balance."
     end
-    binding.pry
     receiver.deposit(amount)
     sender.deposit(amount * -1)
     @status = 'complete'
