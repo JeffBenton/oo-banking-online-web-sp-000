@@ -24,4 +24,7 @@ class Transfer
     sender.deposit(amount * -1)
     @status = 'complete'
   end
+  
+  def reverse_transfer
+  end
 end
